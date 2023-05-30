@@ -1,0 +1,10 @@
+tipos=(
+    ('Condominio','Condiminio'),
+    ('Edificio','Edificio'),
+    ('Loteo','Loteo'),
+    ('Villa','Villa')
+)
+tiposU=(
+    ('Casa','Casa'),
+    ('Departamento','Departamento'),
+)

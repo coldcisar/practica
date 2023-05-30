@@ -1,0 +1,43 @@
+<html>
+<body>
+<form method="post">
+    <center>
+        <div class="container">
+            <h1>Pagina LOGIN</h1>
+            {% csrf_token %}
+            <table cellpadding="5" cellpacing="2" border="1">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">Formulario login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ingrese su nombre de Usuario</td>
+                        <td><input type="text" placeholder="Ingrese su nombre de usuario" name="usuario" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Contraseña</td>
+                        <td><input type="text" placeholder="Ingrese su contraseña" name="contraseña" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="submit">Login</button>
+                            
+                            <button type="reset">Limpiar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% if messages %}
+                {% for msg in messages %}
+                <b>{{msg}}</b>
+                {% endfor %}
+                {% endif %}
+        </div>
+    </center>
+</form>    
+</body>
+
+</html>
