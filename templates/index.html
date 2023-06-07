@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <!---Bootstrap-->
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container" text="align" >
-    <h1>Menu</h1>
-    <h4><a href="/comunidad">Mantenedor de (N°) comunidades</a></h4>
-    <h4><a href="/unidad">Listado o registro de unidades habitacionales</a></h4>
-    <h4><a href="/propietarios">Listado o registro de Propietarios</a></h4>
-    <h4><a href="/residentes">Listado o registro de Residentes</a></h4>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    
-    
-</body>
-</html>
+{% extends 'index_master.html' %}
+
+{% block content %}
+
+    <!-- page content -->
+        <div class="right_col" role="main">
+          <h1>NOVEDADES EN BREVE</h1>
+        </div>
+        <!-- /page content -->
+{% endblock %}

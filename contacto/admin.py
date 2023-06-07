@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import nuevoUsuario, comunidades,unidades,id_residente,id_propietario,residente,propietario
+from .models import nuevoUsuario, Comunidades,Unidades,Id_residente,Id_propietario,Residente,Propietario
 
 admin.site.register(nuevoUsuario)
-admin.site.register(comunidades)
-admin.site.register(unidades)
-admin.site.register(id_residente)
-admin.site.register(id_propietario)
-admin.site.register(residente)
-admin.site.register(propietario)
+admin.site.register(Comunidades)
+admin.site.register(Unidades)
+admin.site.register(Id_residente)
+admin.site.register(Id_propietario)
+admin.site.register(Residente)
+admin.site.register(Propietario)

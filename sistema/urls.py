@@ -21,14 +21,12 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('menu',views.paginaIndex,name='menu'),
+    path('menu/',views.paginaIndex,name='menu'),
     path('',views.paginaLogin, name='paginaLogin'),
-    path('comunidad',views.paginaComunidad, name='paginaComunidad'),
     path('list_comunidad/',views.list_comunidad,name='list_comunidad'),
-    path('unidad',views.paginaUnidad,name='unidad'),
     path('list_unidad/',views.list_unidad,name='list_unidad'),
     path('list_propietarios/',views.list_propietarios,name='list_propietarios'),
-    path('propietarios/',views.paginaPropietarios,name='propietarios'),
     path('list_residentes/',views.list_residentes,name='list_residentes'),
-    path('residentes/',views.paginaResidentes,name='residentes'),
+    path('login',views.cerrar_sesion,name='cerrar_sesion'),
+
 ]
