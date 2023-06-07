@@ -49,7 +49,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="C:\Users\cesar\OneDrive\Escritorio\sistema\sistema\templates\imagen.png" alt="foto de perfil" class="img-circle profile_img">
+                <img src="{% static '/images/imagen.jpg' %}" alt="foto de perfil" class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
@@ -96,7 +96,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="C:\Users\cesar\OneDrive\Escritorio\sistema\sistema\contacto\static\FrWork\admin_lte\build\images\image.jpg" alt="">
+                    <img src="{% static '/images/imagen.jpg' %}" alt="">
                     {% if request.session.usuario %}
                     {{request.session.usuario}} &nbsp;&nbsp;
                     {% endif %}
