@@ -20,10 +20,9 @@
                 <div class="tile">
                     <div class="tile-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="tb_propietarios">
+                            <table class="table table-hover table-bordered" id="tb_propietarios_ID">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>RUT</th>
                                         <th>Tipo</th>
                                         <th>Direccion</th>
@@ -34,21 +33,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for item in propietarios %}
                                    <tr>
-                                    <td>{{item}}</td>
-                                    <td>{{item.rut_propietario}}</td>
-                                    <td>{{item.tipo_unidad}}</td>
-                                    <td>{{item.direccion}}</td>>
-                                    <td>{{item.rut_residente}}</td>
-                                    <td>{{item.telefono_propietario}}</td>
-                                    <td>{{item.estado}}</td>
+                                    <td>{{propietario.rut_propietario}}</td>
+                                    <td>{{propietario.tipo_unidad}}</td>
+                                    <td>{{propietario.direccion}}</td>
+                                    <td>{{propietario.rut_residente}}</td>
+                                    <td>{{propietario.telefono_propietario}}</td>
+                                    <td>{{propietario.estado}}</td>
                                     <td>
                                         <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
                                         <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
                                     </td>
-                                   </tr>    
-                                {% endfor %}   
+                                   </tr>      
                                 </tbody>
                             </table>
     

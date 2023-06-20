@@ -6,13 +6,13 @@
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list" ></i>Propietarios</h1>
-                <p>Propietarios</p>
+                <h1><i class="fa fa-th-list" ></i>Bodegas</h1>
+                <p>Bodegas</p>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
               <li class="breadcrumb-item" ><i class="fa fa-home fa-lg"></i></li>
     
-              <li class="breadcrumb-item active"><a href="#">Propietarios</a></li>
+              <li class="breadcrumb-item active"><a href="#">Bodegas</a></li>
             </ul>
         </div>
         <div class="row">
@@ -20,29 +20,23 @@
                 <div class="tile">
                     <div class="tile-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="tb_propietarios">
+                            <table class="table table-hover table-bordered" id="tb_bodegas">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>RUT</th>
-                                        <th>Tipo</th>
-                                        <th>Direccion</th>
-                                        <th>Residente(Rut)</th>
-                                        <th>Telefono</th>
-                                        <th>Estado</th>
+                                        <th>Numero de Bodega</th>
+                                        <th>Numero Recinto</th>
+                                        <th>Comunidad</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for item in propietarios %}
+                                {% for item in bodega %}
                                    <tr>
                                     <td>{{item}}</td>
-                                    <td>{{item.rut_propietario}}</td>
-                                    <td>{{item.tipo_unidad}}</td>
-                                    <td>{{item.direccion}}</td>>
-                                    <td>{{item.rut_residente}}</td>
-                                    <td>{{item.telefono_propietario}}</td>
-                                    <td>{{item.estado}}</td>
+                                    <td>{{item.n_bodega}}</td>
+                                    <td>{{item.n_recinto_bodegas}}</td>
+                                    <td>{{item.comunidad_bodegas}}</td>
                                     <td>
                                         <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
                                         <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>

@@ -41,12 +41,14 @@
                                     <td>{{item.nombre_comunidades}}</td>
                                     <td>{{item.tipo_comunidades}}</td>
                                     <td>{{item.direccion_comunidades}}</td>
-                                    <td>{{item.conserje_nombre}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_conserjes/'"><i class="fa-solid fa-pencil"></i></button>
+                                    </td>
                                     <td>{{item.fono_comunidades}}</td>
                                     <td>{{item.n_unidades}}</td>
                                     <td>{{item.n_residentes}}</td>
                                     <td>
-                                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
+                                        <button class='btn btn-sm btn-primary' onclick="window.location.href='/actualizar_comunidad/{{item.nombre_comunidades}}'"><i class='fa-solid fa-pencil'></i></button>
                                         <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
                                     </td>
                                    </tr>    

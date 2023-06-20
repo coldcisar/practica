@@ -28,5 +28,10 @@ urlpatterns = [
     path('list_propietarios/',views.list_propietarios,name='list_propietarios'),
     path('list_residentes/',views.list_residentes,name='list_residentes'),
     path('login',views.cerrar_sesion,name='cerrar_sesion'),
-
+    path('agregar_comunidad',views.agregarC,name='agregar_comunidad'),
+    path('actualizar_comunidad/<idComunidades>',views.actualizarC,name='actualizar_comunidad'),
+    path('list_conserjes/',views.list_conserje,name='list_conserjes'),
+    path('list_estacionamiento/',views.list_estacionamiento,name='list_estacionamiento'),
+    path('list_bodegas/',views.list_bodegas,name='list_bodegas'),
+    path('propietarios_historicos/<idPropietario>',views.propietarios_ID,name='propietarios_historicos'),
 ]
