@@ -1,0 +1,57 @@
+{% extends 'index_master.html' %}
+{% block content %}
+
+{% load static %}
+<div class="right_col" role="main">
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="fa fa-th-list" ></i>Medidores</h1>
+                <p>Medidores</p>
+            </div>
+            <ul class="app-breadcrumb breadcrumb side">
+              <li class="breadcrumb-item" ><i class="fa fa-home fa-lg"></i></li>
+    
+              <li class="breadcrumb-item active"><a href="#">Medidores</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div class="tile-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" id="tb_medidores">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Numero medidor</th>
+                                        <th>Tipo</th>
+                                        <th>Comunidad</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in medidores %}
+                                   <tr>
+                                    <td>{{item}}</td>
+                                    <td>{{item.n_medidor}}</td>
+                                    <td>{{item.tipo_medidor}}</td>
+                                    <td>{{item.comunidad_medidor}}</td>
+                                    <td>
+                                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
+                                        <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
+                                    </td>
+                                   </tr>    
+                                {% endfor %}   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

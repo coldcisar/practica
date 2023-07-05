@@ -6,13 +6,13 @@
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list" ></i>Propietarios</h1>
-                <p>Propietarios</p>
+                <h1><i class="fa fa-th-list" ></i>Residentes Temporales</h1>
+                <p>Residentes Temporales</p>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
               <li class="breadcrumb-item" ><i class="fa fa-home fa-lg"></i></li>
     
-              <li class="breadcrumb-item active"><a href="#">Propietarios</a></li>
+              <li class="breadcrumb-item active"><a href="#">Residentes Temporales</a></li>
             </ul>
         </div>
         <div class="row">
@@ -20,44 +20,43 @@
                 <div class="tile">
                     <div class="tile-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="tb_propietarios">
+                            <table class="table table-hover table-bordered" id="tb_residentes_temporales">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>RUT</th>
+                                        <th>Rut Residente</th>
                                         <th>Tipo</th>
                                         <th>Direccion</th>
-                                        <th>Residente(Rut)</th>
-                                        <th>Telefono</th>
+                                        <th>Numero Recinto</th>
+                                        <th>Rut propietario</th>
+                                        <th>Telefono Residente</th>
                                         <th>Estado</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for item in propietarios %}
+                                {% for item in residenteT %}
                                    <tr>
                                     <td>{{item}}</td>
-                                    <td>{{item.rut_propietario}}</td>
-                                    <td>{{item.tipo_unidad}}</td>
-                                    <td>{{item.direccion}}</td>>
-                                    <td>{{item.rut_residente}}</td>
-                                    <td>{{item.telefono_propietario}}</td>
-                                    <td>{{item.estado}}</td>
+                                    <td>{{item.rut_residenteT}}</td>
+                                    <td>{{item.tipo_unidad_residenteT}}</td>
+                                    <td>{{item.direccionT}}</td>
+                                    <td>{{item.n_recintoT}}</td>
+                                    <td>{{item.rut_propietarioT}}</td>
+                                    <td>{{item.telefono_residentTe}}</td>
+                                    <td>{{item.estado_rT}}</td>
+                                    <td>{{item.fecha_inicio}}</td>
+                                    <td>{{item.fecha_fin}}</td>
                                     <td>
-                                        <button class='btn btn-sm btn-primary' onclick="window.location.href='/editar_propietarios/{{item.rut_propietario}}'"><i class='fa-solid fa-pencil'></i></button>
+                                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
                                         <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
                                     </td>
                                    </tr>    
                                 {% endfor %}   
                                 </tbody>
                             </table>
-                            <div class="d-flex" style="margin-right: 25px;">
-                                <div class="input-group input-group-sm">
-                                    <a class="btn btn-success btn-sm" style="width: 40px;" data-bs-toggle="modal" data-bs-target="#addModal">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

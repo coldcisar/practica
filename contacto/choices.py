@@ -12,3 +12,7 @@ estados=(
     ('Activo','Activo'),
     ('Inactivo','Inactivo'),
 )
+tiposM=(
+    ('Luz','Luz'),
+    ('Agua','Agua'),
+)

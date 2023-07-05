@@ -36,4 +36,11 @@ urlpatterns = [
     path('propietarios_unidad/<idPropietario>',views.propietarios_ID,name='propietarios_unidad'),
     path('propietarios_historicos/',views.list_propietarios_historicos,name='propietarios_historicos'),
     path('editar_propietarios/',views.actualizarP,name='editar_propietarios_historicos'),
+    path('list_medidores/',views.list_medidores,name="list_medidores"),
+    path('list_residentes_temporales/',views.list_residentes_temporales,name='list_residentes_temporales'),
+    path('list_proveedores/',views.list_proveedores,name='list_proveedores'),
+    path('list_actasO/',views.list_actasO,name='list_actasO'),
+    path('list_actasE/',views.list_actasE,name='list_actasE'),
+    path('list_bitacoras/',views.list_bitacora,name='list_bitacoras')
+    
 ]

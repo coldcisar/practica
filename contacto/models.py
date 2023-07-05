@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import tipos,tiposU,estados
+from .choices import tipos,tiposU,estados,tiposM
 
 class nuevoUsuario(models.Model):
     usuario=models.CharField(blank=True ,max_length=150,verbose_name="Usuario")
@@ -49,7 +49,7 @@ class Id_propietario(models.Model):
         db_table ='id_propietarios'
 
     def __str__(self):
-        return str(self.id)
+        return str(self.propietario)
 
      
 
@@ -149,6 +149,93 @@ class Estacionamiento(models.Model):
 
     def __str__(self):
         return str(self.n_estacionamiento) 
+    
+
+class Medidores(models.Model):
+    n_medidor=models.IntegerField()
+    tipo_medidor=models.CharField(max_length=10,choices=tiposM)
+    comunidad_medidor=models.ForeignKey(Comunidades, null=True, blank=True, on_delete=models.CASCADE,related_name='comunidad_medidor')
+
+    class Meta:
+        verbose_name = "Medidor"
+        verbose_name_plural ="Medidores"
+        db_table = "medidores"
+
+    def __str__(self):
+        return str(self.n_medidor) 
+
+class ResidentesT(models.Model):
+    rut_residenteT=models.ForeignKey(Id_residente, null=True,blank=True,on_delete=models.CASCADE,related_name='residentestID')
+    tipo_unidad_residenteT=models.CharField(max_length=15,null=True,choices=tiposU)
+    direccionT=models.CharField(max_length=50)
+    n_recintoT=models.ForeignKey(Unidades,null=True,blank=True,on_delete=models.CASCADE,related_name='n_recinto_residenteT')
+    rut_propietarioT=models.ForeignKey(Id_propietario,null=True,blank=True,on_delete=models.CASCADE,related_name='propietariotID')
+    telefono_residentTe=models.IntegerField()
+    estado_rT=models.CharField(max_length=10,null=True,choices=estados)
+    fecha_inicio=models.DateTimeField()
+    fecha_fin=models.DateTimeField()
+
+    class Meta:
+        verbose_name="ResidenteT"
+        verbose_name_plural="ResidentesT"
+        db_table="residentesT"
+
+    def __str__(self):
+        return str(self.rut_residenteT) 
+
+class Proveedores(models.Model):
+    rut_proveedores=models.CharField(max_length=10,null=True)
+    nombre_proveedor=models.CharField(max_length=50,null=True)
+    comunidad_proveedores=models.ForeignKey(Comunidades,null=True,blank=True,on_delete=models.CASCADE,related_name="comunidad_proveedores")
+
+    class Meta:
+        verbose_name = "proveedor"
+        verbose_name_plural = "proveedores"
+        db_table = "proveedores"
+    def __str__(self):
+        return str(self.rut_proveedores)    
+
+class ActasO(models.Model):
+    id_actasO=models.CharField(max_length=5,null=True)
+    asunto=models.CharField(max_length=20)
+    descripcion=models.CharField(max_length=150)
+
+    class Meta:
+        verbose_name= "actaO"
+        verbose_name_plural= "actasO"
+        db_table= "actasO"
+
+    def __str__(self):
+        return str(self.id_actasO)
+        
+class ActasE(models.Model):
+    id_actasE=models.CharField(max_length=5)
+    asuntoE=models.CharField(max_length=20)
+    descripcionE=models.CharField(max_length=150)
+
+    class Meta:
+        verbose_name = "actaE"
+        verbose_name_plural = "actasE"
+        db_table = "actasE"
+
+    def __str__(self):
+        return str(self.id_actasE)
+
+class Bitacora(models.Model):
+    id_bitacora=models.CharField(max_length=5)
+    nombre_bitacora=models.CharField(max_length=20)
+    comunidad_bitacora=models.ForeignKey(Comunidades, null=True, blank=True,on_delete=models.CASCADE,related_name="comunidad_bitacora")
+
+    class Meta:
+        verbose_name = "bitacora"
+        verbose_name_plural ="bitacoras"
+        db_table="bitacoras"
+
+    def __str__(self):
+        return str(self.id_bitacora)
+
+
+
 
 
 

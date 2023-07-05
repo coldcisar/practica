@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from contacto.models import nuevoUsuario,Comunidades,Unidades,Propietario,Residente,Conserje,Estacionamiento,Bodegas,Id_propietario
+from contacto.models import nuevoUsuario,Comunidades,Unidades,Propietario,Residente,Conserje,Estacionamiento,Bodegas,Id_propietario,Medidores,ResidentesT,Proveedores,ActasE,ActasO,Bitacora
 from django.contrib import messages 
 from django.http import HttpResponseRedirect
 
@@ -160,6 +160,51 @@ def list_bodegas(request):
         'bodega':bodegas
     }    
     return render(request, template_name,context)
+def list_medidores(request):
+    template_name='medidores.html'
+    medidores=Medidores.objects.all()
+    context={
+        'medidores':medidores
+    }
+    return render(request, template_name, context)
+def list_residentes_temporales(request):
+    template_name='residentes_temporales.html'
+    residentesT=ResidentesT.objects.all()
+    context={
+        'residenteT':residentesT
+    }
+    return render(request, template_name,context)
+def list_proveedores(request):
+    template_name='proveedores.html'
+    proveedores=Proveedores.objects.all()
+    context={
+        'proveedores':proveedores
+    }
+    return render(request, template_name,context)
+def list_actasO(request):
+    template_name='actasO.html'
+    actasO=ActasO.objects.all()
+    context={
+        'actaO':actasO
+    }
+    return render(request,template_name,context)
+def list_actasE(request):
+    template_name='actasE.html'
+    actasE=ActasE.objects.all()
+    context={
+        'actaE':actasE
+    }
+    return render(request,template_name,context)
+
+def list_bitacora(request):
+    template_name='Bitacora.html'
+    bitacora=Bitacora.objects.all()
+    context={
+        'bitacora':bitacora
+    }
+    return render(request,template_name,context)
+
+
 
 
          

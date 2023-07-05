@@ -1,0 +1,59 @@
+{% extends 'index_master.html' %}
+{% block content %}
+
+{% load static %}
+<div class="right_col" role="main">
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="fa fa-th-list" ></i>Proveedores</h1>
+                <p>Proveedores</p>
+            </div>
+            <ul class="app-breadcrumb breadcrumb side">
+              <li class="breadcrumb-item" ><i class="fa fa-home fa-lg"></i></li>
+    
+              <li class="breadcrumb-item active"><a href="#">Proveedores</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div class="tile-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" id="tb_proveedores">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Rut Proveedores</th>
+                                        <th>Nombre Proveedor</th>
+                                        <th>Comunidad</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in proveedores %}
+                                   <tr>
+                                    <td>{{item}}</td>
+                                    <td>{{item.rut_proveedores}}</td>
+                                    <td>{{item.nombre_proveedor}}</td>
+                                    <td>{{item.comunidad_proveedores}}</td>
+                                    <td>
+                                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
+                                        <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
+                                    </td>
+                                   </tr>    
+                                {% endfor %}   
+                                </tbody>
+                            </table>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+</div>
+
+
+{% endblock %}
