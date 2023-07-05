@@ -1,0 +1,81 @@
+  <!-- Modal -->
+  <div class="modal fade" {% block modal-id %}id="addModal"{% endblock modal-id %} tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="addModalLabel">
+            {% block modal-title %}<i class="fas fa-plus"></i>&nbsp;&nbsp; Agregar Propietario {% endblock modal-title %} 
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="POST" {% block action %} action="/agregar_propietario" {% endblock action %} autocomplete="off">
+            {% csrf_token %}
+            <div class="modal-body">
+
+                {% block Value-id%}{% endblock Value-id %}
+                 <div class="input-group mb-3"><
+                    <span class="btn border-secordary bg-light"><i class="fas fa-user-alt"></i></span>
+                    <input type="text" class="form-control" name="rut_propietario" maxlength="10" placeholder="Rut Propietario" required>
+                 </div>
+                 <div class="input-group mb-3"><
+                     <label >
+                        <span class="btn border-secordary bg-light" style="border-radius: 4px 0px 0px 4px;">
+                              <i class="fas fa-child"></i>
+                        </span>
+                    </label>
+                    <select class="form-select" name="tipo_unidad" required>
+                        {% block action2 %}
+                        <option value="" hidden>Seleccione el tipo de unidad</option>
+                        {% endblock action2 %}
+                        <option disable></option>
+                        <option>Casa</option>
+                        <option>Departamento</option>
+                    </select>
+                 </div> 
+                 <div class="input-group mb-3"><
+                    <span class="btn border-secordary bg-light"><i class="fas fa-user-alt"></i></span>
+                    <input type="text" class="form-control" name="direccion" maxlength="10" placeholder="Direccion" required>
+                 </div> 
+                 <div class="input-group mb-3"><
+                    <span class="btn border-secordary bg-light"><i class="fas fa-user-alt"></i></span>
+                    <input type="text" class="form-control" name="n_recinto" maxlength="10" placeholder="Numero de Recinto" required>
+                 </div> 
+                 <div class="input-group mb-3"><
+                    <span class="btn border-secordary bg-light"><i class="fas fa-user-alt"></i></span>
+                    <input type="text" class="form-control" name="rut_residente" maxlength="10" placeholder="Rut Residente" required>
+                 </div> 
+                 <div class="input-group mb-3"><
+                    <span class="btn border-secordary bg-light"><i class="fas fa-user-alt"></i></span>
+                    <input type="text" class="form-control" name="telefono_propietario" maxlength="10" placeholder="Telefono Propietario" required>
+                 </div>     
+                 <div class="input-group mb-3"><
+                    <label >
+                       <span class="btn border-secordary bg-light" style="border-radius: 4px 0px 0px 4px;">
+                             <i class="fas fa-child"></i>
+                       </span>
+                   </label>
+                   <select class="form-select" name="estado" required>
+                       {% block action3 %}
+                       <option value="" hidden>Seleccione el estado</option>
+                       {% endblock action3 %}
+                       <option disable></option>
+                       <option>Activo</option>
+                       <option>Inactivo</option>
+                   </select>
+                </div> 
+            </div>
+        </form>
+        <div class="mt-4" style="width: 100%;">
+          <button type="submit" class="btn btn-secondary">
+           {% block btn-action %} <i class="fas fa-plus"></i>&nbsp;&nbsp; Agregar Propietario {% endblock btn-action %}
+          </button>
+          <button type="reset" class="btn btn-outline-dark mb-3 ms-2" style="width: 50px;" title="Reset">
+           <i class="fas fa-sync-alt"></i>
+          </button>
+          <a href="{% url 'list_propietarios' %}" type="button" class="btn btn-outline-dark mb-3 ms-2" style="width: 50px;" title="Cerrar">
+          <i class="fas fa-times"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

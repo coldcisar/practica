@@ -44,20 +44,26 @@
                                     <td>{{item.telefono_propietario}}</td>
                                     <td>{{item.estado}}</td>
                                     <td>
-                                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
+                                        <button class='btn btn-sm btn-primary' onclick="window.location.href='/editar_propietarios/{{item.rut_propietario}}'"><i class='fa-solid fa-pencil'></i></button>
                                         <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
                                     </td>
                                    </tr>    
                                 {% endfor %}   
                                 </tbody>
                             </table>
-    
+                            <div class="d-flex" style="margin-right: 25px;">
+                                <div class="input-group input-group-sm">
+                                    <a class="btn btn-success btn-sm" style="width: 40px;" data-bs-toggle="modal" data-bs-target="#addModal">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                        {% include 'agregarP.html' %}
                     </div>
                 </div>
             </div>
         </div>
-    
     </main>
 </div>
 

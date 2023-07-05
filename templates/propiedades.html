@@ -24,12 +24,13 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Numero de Recinto</th>
-                                        <th>Tipo</th>
-                                        <th>Nombre Villa</th>
-                                        <th>Direccion</th>
-                                        <th>Propietario</th>
                                         <th>Comunidad</th>
+                                        <th>Grupo</th>
+                                        <th>Tipo</th>
+                                        <th>Direccion</th>
+                                        <th>Numero</th>
+                                        <th>Propietario</th>
+                                        <th>Telefono propietario</th>
                                         <th>Estacionamiento</th>
                                         <th>Bodega</th>
                                         <th>Opciones</th>
@@ -39,14 +40,15 @@
                                 {% for item in unidad %}
                                    <tr>
                                     <td>{{item}}</td>
-                                    <td>{{item.n_recinto}}</td>
-                                    <td>{{item.tipo_unidad}}</td>
-                                    <td>{{item.nombre_villa}}</td>
-                                    <td>{{item.direccion_unidad}}</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/propietarios_historicos/{{item.propietario}}'"><i class="fa-solid fa-pencil"></i></button>
-                                    </td>
                                     <td>{{item.comunidad}}</td>
+                                    <td>{{item.grupo}}</td>
+                                    <td>{{item.tipo_unidad}}</td>
+                                    <td>{{item.direccion_unidad}}</td>
+                                    <td>{{item.n_recinto}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/propietarios_unidad/{{item.propietario}}'"><i class="fa-solid fa-pencil"></i></button>
+                                    </td>
+                                    <td>{{item.telefono_propietario}}</td>
                                     <td>
                                         <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_estacionamiento/'"><i class="fa-solid fa-pencil"></i></button>
                                     </td>

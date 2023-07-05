@@ -33,5 +33,7 @@ urlpatterns = [
     path('list_conserjes/',views.list_conserje,name='list_conserjes'),
     path('list_estacionamiento/',views.list_estacionamiento,name='list_estacionamiento'),
     path('list_bodegas/',views.list_bodegas,name='list_bodegas'),
-    path('propietarios_historicos/<idPropietario>',views.propietarios_ID,name='propietarios_historicos'),
+    path('propietarios_unidad/<idPropietario>',views.propietarios_ID,name='propietarios_unidad'),
+    path('propietarios_historicos/',views.list_propietarios_historicos,name='propietarios_historicos'),
+    path('editar_propietarios/',views.actualizarP,name='editar_propietarios_historicos'),
 ]

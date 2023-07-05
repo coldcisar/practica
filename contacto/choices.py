@@ -8,3 +8,7 @@ tiposU=(
     ('Casa','Casa'),
     ('Departamento','Departamento'),
 )
+estados=(
+    ('Activo','Activo'),
+    ('Inactivo','Inactivo'),
+)

@@ -2,6 +2,7 @@
 from django.shortcuts import render,redirect
 from contacto.models import nuevoUsuario,Comunidades,Unidades,Propietario,Residente,Conserje,Estacionamiento,Bodegas,Id_propietario
 from django.contrib import messages 
+from django.http import HttpResponseRedirect
 
 
 def paginaIndex(request):
@@ -58,12 +59,30 @@ def actualizarC(request,idComunidades):
 def propietarios_ID(request,idPropietario):
     try:
         propietarios=Propietario.objects.all()
-        propietario_id=Propietario.objects.get(rut_propietario_id=idPropietario)
-        datos={'propietarios': propietarios,"propietario": propietario_id}
-        if propietario_id != None :
-            return render(request,"propietarios_historicos.html",datos)  
+        propietario=Propietario.objects.get(id=idPropietario)
+        datos={'propietarios': propietarios,"propietario": propietario}
+        if propietario != None :
+            return render(request,"propietario_unidad.html",datos)  
     except Propietario.DoesNotExist:
         return render(request,"propiedades.html")
+    
+
+def actualizarP(request):
+    if request.method == "POST":
+        propietario= Propietario.objects.get(id=request.POST.get('id'))
+        if propietario != None :
+            propietario.rut_propietario=request.POST.get('rut_propietario')
+            propietario.tipo_unidad=request.POST.get('tipo_unidad')
+            propietario.direccion=request.POST.get('direccion')
+            propietario.n_recinto=request.POST.get('n_recinto')
+            propietario.rut_residente=request.POST.get('rut_residente')
+            propietario.telefono_propietario=request.POST.get('telefono_propietario')
+            propietario.estado=request.POST.get('estado')
+            if request.POST.get('estado')=="Inactivo":
+                return redirect("propietarios_historicos.html")
+            propietario.save()
+            messages.success(request,"Propietario Actualizado Correctamente")
+            return HttpResponseRedirect("/")
 
 
 def paginaLogin(request):
@@ -95,7 +114,14 @@ def list_propietarios(request):
     context={
         "propietarios": propietarios
     }
-    return render(request, template_name,context)   
+    return render(request, template_name,context)  
+def list_propietarios_historicos(request):
+    template_name='propietarios_historicos.html'
+    propietarios=Propietario.objects.all()
+    context={
+             "propietarios": propietarios 
+    }
+    return render(request, template_name,context)
 def list_residentes(request):
     template_name='residentes.html'
     residentes=Residente.objects.all()

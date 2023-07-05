@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import tipos,tiposU
+from .choices import tipos,tiposU,estados
 
 class nuevoUsuario(models.Model):
     usuario=models.CharField(blank=True ,max_length=150,verbose_name="Usuario")
@@ -50,18 +50,8 @@ class Id_propietario(models.Model):
 
     def __str__(self):
         return str(self.id)
- 
 
-class Id_conserje(models.Model):
-    propietario=models.CharField(max_length=9) 
-    
-    class Meta:
-        verbose_name = 'id_conserje'
-        verbose_name_plural = 'id_conserje'
-        db_table ='id_conserje'
-
-    def __str__(self):
-        return str(self.conserje)     
+     
 
 
 class Unidades(models.Model):
@@ -70,8 +60,9 @@ class Unidades(models.Model):
     nombre_villa=models.ForeignKey(Comunidades,null=True,blank=True,on_delete=models.CASCADE,related_name='nombre_villa')
     direccion_unidad=models.CharField(max_length=50)
     propietario=models.ForeignKey(Id_propietario,null=True,blank=True,on_delete=models.CASCADE,related_name='propietario_id')
-    telefono_propietario=models.ForeignKey(Id_propietario,null=True,blank=True,on_delete=models.CASCADE,related_name='telefono_propietario')
+    telefono_propietario=models.CharField(max_length=9,null=True)
     comunidad=models.ForeignKey(Comunidades,null=True,blank=True,on_delete=models.CASCADE,related_name='comununidad')
+    grupo=models.CharField(max_length=50,null=True)
     
     class Meta:
         verbose_name ='Unidade'
@@ -80,6 +71,7 @@ class Unidades(models.Model):
 
     def __str__(self):
         return str(self.n_recinto)
+    
 
 
 
@@ -90,7 +82,7 @@ class Residente(models.Model):
     n_recinto=models.ForeignKey(Unidades,null=True,blank=True,on_delete=models.CASCADE,related_name='n_recinto_residente')
     rut_propietario=models.ForeignKey(Id_propietario,null=True,blank=True,on_delete=models.CASCADE,related_name='propietarioID')
     telefono_residente=models.IntegerField()
-    estado_r=models.CharField(max_length=10,null=True)
+    estado_r=models.CharField(max_length=10,null=True,choices=estados)
 
     class Meta:
         verbose_name="Residente"
@@ -108,7 +100,7 @@ class Propietario(models.Model):
     n_recinto=models.ForeignKey(Unidades,null=True,blank=True,on_delete=models.CASCADE,related_name='n_recinto_propietario')
     rut_residente=models.ForeignKey(Id_residente, null=True,blank=True,on_delete=models.CASCADE,related_name='rut_residente')
     telefono_propietario=models.IntegerField()
-    estado=models.CharField(max_length=10)
+    estado=models.CharField(max_length=10,choices=estados)
 
     class Meta:
         verbose_name = "Propietario"
