@@ -3,7 +3,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +45,7 @@
 
             <div class="clearfix"></div>
 
-            <!-- menu profile quick info -->
+            <!-- menu perfil -->
             <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="{% static '/images/imagen.jpg' %}" alt="foto de perfil" class="img-circle profile_img">
@@ -58,11 +57,11 @@
                 {% endif %}
               </div>
             </div>
-            <!-- /menu profile quick info -->
+            <!-- /menu perfil -->
 
             <br />
 
-            <!-- sidebar menu -->
+            <!-- barra menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>General</h3>
@@ -82,7 +81,7 @@
                       <li><a href="{% url 'list_bitacoras' %}">Bitacoras</a></li>
                     </ul>
                   </li>  
-                  <li><a><i class="fa fa-home"></i> Mantenimiento <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cog"></i> Mantenimiento <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="">Administrar Archivos </a></li>
                       <li><a href="">Fichas Tecnicas</a></li>
@@ -94,7 +93,7 @@
                       <li><a href="">Certificaciones</a></li>
                     </ul>
                   </li>  
-                  <li><a><i class="fa fa-home"></i> Finanzas <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-money"></i> Finanzas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="">Presupuestos </a></li>
                       <li><a href="">Flujo de Caja</a></li>
@@ -109,7 +108,7 @@
                       <li><a href="">Orden de Compra</a></li>
                     </ul>
                   </li>    
-                  <li><a><i class="fa fa-home"></i> Personal <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-user"></i> Personal <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="">Contratos </a></li>
                       <li><a href="">Honorarios</a></li>
@@ -122,14 +121,12 @@
               </div>
 
             </div>
-            <!-- /sidebar menu -->
+            <!-- barra menu -->
 
-            <!-- /menu footer buttons -->
-            <!-- /menu footer buttons -->
           </div>
         </div>
 
-        <!-- top navigation -->
+        <!-- barra arriba -->
         <div class="top_nav">
           <div class="nav_menu">
               <div class="nav toggle">
@@ -197,24 +194,23 @@
             </nav>
           </div>
         </div>
-        <!-- /top navigation -->
+        <!-- barra arriba -->
 
 
 
-        <!-- ****************************************   -->
 
         {% block content %}
         {% endblock %}
 
 
-        <!-- footer content -->
+        <!-- contenido abajo -->
         <footer>
           <div class="pull-right">
-            <a href="https://colorlib.com">CondominioWeb</a>
+            <a href="">CondominioWeb</a>
           </div>
           <div class="clearfix"></div>
         </footer>
-        <!-- /footer content -->
+        <!-- contenido abajo -->
       </div>
     </div>
 
