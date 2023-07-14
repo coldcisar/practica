@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from contacto.models import nuevoUsuario,Comunidades,Unidades,Propietario,Residente,Conserje,Estacionamiento,Bodegas,Id_propietario,Medidores,ResidentesT,Proveedores,ActasE,ActasO,Bitacora
+from contacto.models import nuevoUsuario,Comunidades,Unidades,Propietario,Residente,Conserje,Estacionamiento,Bodegas,Medidores,ResidentesT,Proveedores,ActasE,ActasO,Bitacora
 from django.contrib import messages 
 from django.http import HttpResponseRedirect
 
@@ -66,24 +66,6 @@ def propietarios_ID(request,idPropietario):
     except Propietario.DoesNotExist:
         return render(request,"propiedades.html")
     
-
-def actualizarP(request):
-    if request.method == "POST":
-        propietario= Propietario.objects.get(id=request.POST.get('id'))
-        if propietario != None :
-            propietario.rut_propietario=request.POST.get('rut_propietario')
-            propietario.tipo_unidad=request.POST.get('tipo_unidad')
-            propietario.direccion=request.POST.get('direccion')
-            propietario.n_recinto=request.POST.get('n_recinto')
-            propietario.rut_residente=request.POST.get('rut_residente')
-            propietario.telefono_propietario=request.POST.get('telefono_propietario')
-            propietario.estado=request.POST.get('estado')
-            if request.POST.get('estado')=="Inactivo":
-                return redirect("propietarios_historicos.html")
-            propietario.save()
-            messages.success(request,"Propietario Actualizado Correctamente")
-            return HttpResponseRedirect("/")
-
 
 def paginaLogin(request):
     if request.method == 'POST':
