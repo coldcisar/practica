@@ -23,7 +23,6 @@
                             <table class="table table-hover table-bordered" id="tb_conserjes">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>RUT</th>
                                         <th>Nombre y Apellido</th>
                                         <th>Fono Conserje</th>
@@ -34,7 +33,6 @@
                                 <tbody>
                                 {% for item in conserjes %}
                                    <tr>
-                                    <td>{{item}}</td>
                                     <td>{{item.rut_conserje}}</td>
                                     <td>{{item.nombre_apellido}}</td>
                                     <td>{{item.fono_conserje}}</td>

@@ -1,0 +1,3 @@
+En la pagina de unidades habitacionales al momento de presionar el icono propietario sale mal,ya que la id no son las mismas(no se genera la relacion) 
+la unica forma que funcione es que en el models.py en la linea 52 en vez de que sea self.propietario que sea self.id y ahi funciona
+lo malo es que en todas las tablas que salga el propietario la id se va a ver como 1 2 3 etc en vez de que salga el rut   

@@ -23,7 +23,6 @@
                             <table class="table table-hover table-bordered" id="tb_bodegas">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Numero de Bodega</th>
                                         <th>Numero Recinto</th>
                                         <th>Comunidad</th>
@@ -33,7 +32,6 @@
                                 <tbody>
                                 {% for item in bodega %}
                                    <tr>
-                                    <td>{{item}}</td>
                                     <td>{{item.n_bodega}}</td>
                                     <td>{{item.n_recinto_bodegas}}</td>
                                     <td>{{item.comunidad_bodegas}}</td>

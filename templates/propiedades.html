@@ -23,7 +23,6 @@
                             <table class="table table-hover table-bordered" id="tb_propiedades">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Comunidad</th>
                                         <th>Grupo</th>
                                         <th>Tipo</th>
@@ -39,21 +38,20 @@
                                 <tbody>
                                 {% for item in unidad %}
                                    <tr>
-                                    <td>{{item}}</td>
                                     <td>{{item.comunidad}}</td>
                                     <td>{{item.grupo}}</td>
                                     <td>{{item.tipo_unidad}}</td>
                                     <td>{{item.direccion_unidad}}</td>
                                     <td>{{item.n_recinto}}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/propietarios_unidad/{{item.propietario}}'"><i class="fa-solid fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-info" onclick="window.location.href='/propietarios_unidad/{{item.propietario}}'"><i class="fa-solid fa-user"></i></button>
                                     </td>
                                     <td>{{item.telefono_propietario}}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_estacionamiento/'"><i class="fa-solid fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_estacionamiento/'"><i class="fa-solid fa-automobile"></i></button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_bodegas/'"><i class="fa-solid fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_bodegas/'"><i class="fa-solid fa-building"></i></button>
                                     </td>
                                     <td>
                                         <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>

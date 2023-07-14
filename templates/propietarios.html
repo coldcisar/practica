@@ -23,7 +23,6 @@
                             <table class="table table-hover table-bordered" id="tb_propietarios">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>RUT</th>
                                         <th>Tipo</th>
                                         <th>Direccion</th>
@@ -36,7 +35,6 @@
                                 <tbody>
                                 {% for item in propietarios %}
                                    <tr>
-                                    <td>{{item}}</td>
                                     <td>{{item.rut_propietario}}</td>
                                     <td>{{item.tipo_unidad}}</td>
                                     <td>{{item.direccion}}</td>>
@@ -51,13 +49,6 @@
                                 {% endfor %}   
                                 </tbody>
                             </table>
-                            <div class="d-flex" style="margin-right: 25px;">
-                                <div class="input-group input-group-sm">
-                                    <a class="btn btn-success btn-sm" style="width: 40px;" data-bs-toggle="modal" data-bs-target="#addModal">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

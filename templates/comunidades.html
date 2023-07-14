@@ -23,7 +23,6 @@
                             <table class="table table-hover table-bordered" id="tb_comunidades">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Nombre comunidad</th>
                                         <th>Tipo</th>
                                         <th>Direccion</th>
@@ -37,12 +36,11 @@
                                 <tbody>
                                 {% for item in comunidades %}
                                    <tr>
-                                    <td>{{item}}</td>
                                     <td>{{item.nombre_comunidades}}</td>
                                     <td>{{item.tipo_comunidades}}</td>
                                     <td>{{item.direccion_comunidades}}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary" onclick="window.location.href='/list_conserjes/'"><i class="fa-solid fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-info" onclick="window.location.href='/list_conserjes/'"><i class="fa-solid fa-user"></i></button>
                                     </td>
                                     <td>{{item.fono_comunidades}}</td>
                                     <td>{{item.n_unidades}}</td>
